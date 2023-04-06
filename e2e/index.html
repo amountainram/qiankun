@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>QianKun Example</title>
+</head>
+
+<body>
+  <div class="mainapp">
+    <main id="root"></main>
+  </div>
+
+  <script src="/dist/index.umd.js"></script>
+  <script>
+    const {
+      qiankun: {
+        initGlobalState,
+        registerMicroApps,
+        runAfterFirstMounted,
+        setDefaultMountApp,
+        start
+      }
+    } = window
+
+    registerMicroApps(
+      [
+        {
+          name: 'application',
+          entry: '/application/',
+          container: '#root',
+          activeRule: '/home',
+        },
+      ],
+    );
+
+    setDefaultMountApp('/home');
+
+    start();
+  </script>
+</body>
+
+</html>

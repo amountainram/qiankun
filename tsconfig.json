@@ -29,5 +29,10 @@
       "qiankun": ["./src"]
     }
   },
-  "exclude": ["node_modules", "examples"]
+  "exclude": ["node_modules", "examples"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
 }
